@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Meubles Nétange — Le meuble qui vous ressemble · Ferrière-la-Grande, Val de Sambre</title>
+<meta name="description" content="Salons de relaxation, literie, séjours contemporains. Deux magasins à Ferrière-la-Grande. Prenez rendez-vous, demandez un devis. Maison indépendante depuis 1860.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lin:#f5f2ec; --lin-d:#e7e2d8; --anthra:#20211f; --anthra-2:#2b2c29; --gris:#6a6a63;
+  --laiton:#b08d57; --laiton-c:#cba977; --terre:#9a7b57;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--anthra);background:var(--lin);font-size:17px;line-height:1.6}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:500;line-height:1.05}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:'Manrope',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;padding:15px 28px;border-radius:2px;transition:.2s}
+.btn-anthra{background:var(--anthra);color:var(--lin)}
+.btn-anthra:hover{background:#000}
+.btn-laiton{background:var(--laiton);color:#fff}
+.btn-laiton:hover{background:#9a7a48}
+.btn-line{background:transparent;border:1px solid currentColor}
+
+.demo{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--anthra);color:var(--lin);text-align:center;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px}
+.demo b{color:var(--laiton-c)}
+
+header.site{position:sticky;top:24px;z-index:150;background:rgba(245,242,236,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--lin-d)}
+header .wrap{display:flex;align-items:center;gap:20px;height:66px}
+.marque{font-family:'Fraunces',serif;font-weight:600;font-size:23px;letter-spacing:.01em;text-decoration:none}
+.marque span{color:var(--laiton)}
+header nav{margin-left:auto;display:flex;gap:4px;align-items:center}
+header nav a{font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:9px 13px;color:var(--gris)}
+header nav a:hover{color:var(--anthra)}
+header nav a.cta{background:var(--anthra);color:var(--lin);border-radius:2px}
+
+.hero{background:var(--anthra);color:var(--lin);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:0;min-height:88vh;align-items:stretch}
+.hero .txt{display:flex;flex-direction:column;justify-content:center;padding:60px 50px 60px 0}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--laiton-c);margin-bottom:20px}
+.hero h1{color:var(--lin);font-size:clamp(40px,6vw,80px);font-weight:500;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--laiton-c)}
+.hero p{margin:22px 0 28px;font-size:18px;max-width:40ch;color:#cfcbc1}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero .vis{position:relative;margin:0 -24px 0 0}
+.hero .vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.ticker{background:var(--laiton);color:#fff;overflow:hidden;white-space:nowrap;padding:12px 0}
+.ticker .row{display:inline-block;font-family:'Fraunces',serif;font-style:italic;font-size:17px}
+.ticker .row span{padding:0 30px}
+
+section{padding:96px 0}
+.chap{display:flex;align-items:baseline;gap:16px;margin-bottom:10px}
+.chap .num{font-family:'Fraunces',serif;font-size:14px;color:var(--laiton);letter-spacing:.1em}
+.chap .fil{flex:1;height:1px;background:linear-gradient(90deg,var(--laiton),transparent)}
+h2.titre{font-size:clamp(30px,4.6vw,56px);max-width:18ch}
+h2.titre em{font-style:italic;color:var(--laiton)}
+.lead{color:var(--gris);max-width:56ch;margin-top:12px}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.rev.vu{opacity:1;transform:none}
+
+/* collections en scène (alternées) */
+.piece{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;margin-top:30px;background:#fff;border:1px solid var(--lin-d)}
+.piece:nth-child(even) .ph{order:2}
+.piece .ph{min-height:360px;overflow:hidden}
+.piece .ph img{width:100%;height:100%;object-fit:cover}
+.piece .tx{padding:44px;display:flex;flex-direction:column;justify-content:center}
+.piece .n{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--laiton);font-weight:700}
+.piece h3{font-size:34px;margin:8px 0 12px}
+.piece p{color:var(--gris);font-size:15.5px;max-width:44ch}
+.piece .m{margin-top:14px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+
+.maison{background:var(--anthra);color:var(--lin)}
+.maison h2.titre{color:var(--lin)}
+.maison .lead{color:#cfcbc1}
+.maison .chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:40px}
+.maison .ch{border-top:1px solid rgba(203,169,119,.3);padding-top:16px}
+.maison .ch .n{font-family:'Fraunces',serif;font-size:44px;color:var(--laiton-c)}
+.maison .ch .t{font-size:13.5px;color:#cfcbc1;letter-spacing:.04em}
+
+.avis .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:30px}
+.av{background:#fff;border:1px solid var(--lin-d);padding:26px}
+.av .st{color:var(--laiton);letter-spacing:3px}
+.av p{font-family:'Fraunces',serif;font-size:20px;font-style:italic;line-height:1.4;margin:12px 0}
+.av .q{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.avis .src{text-align:center;margin-top:22px;color:var(--gris);font-size:14px}
+
+.rdv{background:var(--lin-d)}
+.rdv .duo{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-top:20px}
+.rdv p{color:var(--gris);margin:14px 0}
+.rdv form{background:#fff;border:1px solid var(--lin-d);padding:26px;display:grid;gap:14px}
+.rdv label{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);font-weight:700;display:block;margin-bottom:5px}
+.rdv input,.rdv select,.rdv textarea{width:100%;border:1px solid var(--lin-d);padding:12px 14px;font-family:'Manrope',sans-serif;font-size:15px;background:var(--lin)}
+.rdv textarea{min-height:80px;resize:vertical}
+.rdv .note{font-size:12px;color:#9a9a92;text-align:center}
+
+.infos .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
+.mag{background:#fff;border:1px solid var(--lin-d);padding:26px}
+.mag .a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--laiton);font-weight:700}
+.mag h3{font-size:22px;margin:6px 0 10px}
+.mag p,.mag li{font-size:14.5px;color:var(--gris)}
+.mag ul{list-style:none;margin-top:6px}
+.mag li{display:flex;justify-content:space-between;gap:10px;padding:2px 0}
+.mag li b{color:var(--anthra)}
+
+footer{background:var(--anthra);color:#9a978d;text-align:center;padding:44px 24px}
+footer .n{font-family:'Fraunces',serif;font-size:28px;color:var(--lin)}
+footer .n span{color:var(--laiton-c)}
+footer .ev{margin-top:14px;font-size:12px;color:#7a776d}
+footer .ev b{color:var(--laiton-c)}
+
+.modal{position:fixed;inset:0;background:rgba(20,20,18,.6);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}
+.modal.show{display:flex}
+.modal .box{background:var(--lin);padding:34px;max-width:430px;text-align:center;border-radius:3px}
+.modal h3{font-size:26px;margin-bottom:8px}
+.modal p{color:var(--gris)}
+.modal .dtag{background:#fff;border:1px solid var(--lin-d);padding:11px;font-size:13px;margin:14px 0;color:var(--anthra)}
+
+body.qa .hero .wrap{min-height:auto;padding-top:40px;padding-bottom:40px}
+body.qa .hero .vis{height:440px;margin-top:20px}
+@media(max-width:880px){
+  .hero .wrap{grid-template-columns:1fr;min-height:auto}
+  .hero .txt{padding:50px 0 30px}
+  .hero .vis{height:56vw;margin:0 -24px}
+  .piece,.rdv .duo{grid-template-columns:1fr}
+  .piece:nth-child(even) .ph{order:0}
+  header nav a:not(.cta){display:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Maquette de démonstration — <b>Everywhere</b> · piste « Contemporain » · aucune donnée collectée</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="marque" href="#haut">Meubles Nétange<span>.</span></a>
+    <nav>
+      <a href="#collections">Collections</a>
+      <a href="#maison">La maison</a>
+      <a href="#avis">Avis</a>
+      <a href="#infos">Magasins</a>
+      <a href="#rdv" class="cta">Rendez-vous</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="haut">
+  <div class="wrap">
+    <div class="txt">
+      <div class="eyebrow">Ferrière-la-Grande · Val de Sambre</div>
+      <h1>Le meuble qui vous <em>ressemble.</em></h1>
+      <p>Salons de relaxation, literie, séjours contemporains — choisis avec le regard d'une maison indépendante, et le conseil qui va avec.</p>
+      <div class="actions">
+        <a class="btn btn-laiton" href="#rdv">Prendre rendez-vous</a>
+        <a class="btn btn-line" style="color:var(--lin)" href="#collections">Voir les collections</a>
+      </div>
+    </div>
+    <div class="vis"><img src="photos/sejour-moderne.jpg" alt="Séjour contemporain Meubles Nétange"></div>
+  </div>
+</div>
+
+<div class="ticker"><div class="row" id="tick"><span>Depuis 1860 — 6 générations</span><span>·</span><span>Deux magasins face à face</span><span>·</span><span>Canapés sur mesure, cuir ou tissu</span><span>·</span><span>Literie Epeda · Dunlopillo</span><span>·</span><span>Le conseil d'une maison indépendante</span><span>·</span></div></div>
+
+<section id="collections">
+  <div class="wrap">
+    <div class="chap rev"><span class="num">01</span><span class="fil"></span></div>
+    <h2 class="titre rev">Chaque pièce, <em>mise en scène.</em></h2>
+    <p class="lead rev">Pas un catalogue empilé — des univers, choisis chez des fabricants sélectionnés.</p>
+
+    <div class="piece rev"><div class="ph"><img src="photos/relaxation-cuir.jpg" alt="Relaxation"></div>
+      <div class="tx"><div class="n">Relaxation</div><h3>Le confort motorisé</h3><p>Salons, canapés et fauteuils de relaxation, cuir ou tissu, réglés au millimètre. Le siège qui s'adapte à vous, pas l'inverse.</p><div class="m">Cuir &amp; tissu · motorisé</div></div></div>
+
+    <div class="piece rev"><div class="ph"><img src="photos/produit.jpg" alt="Literie"></div>
+      <div class="tx"><div class="n">Literie</div><h3>Bien dormir, d'abord</h3><p>Matelas et sommiers Epeda et Dunlopillo — ressorts, latex, mémoire de forme, sommiers et têtes électriques. Essayez avant de choisir.</p><div class="m">Epeda · Dunlopillo</div></div></div>
+
+    <div class="piece rev"><div class="ph"><img src="photos/sejour.jpg" alt="Séjours"></div>
+      <div class="tx"><div class="n">Séjours &amp; chambres</div><h3>Le chêne, revisité</h3><p>Buffets, tables et chaises (Girardeau France), chambres, dressings et rangements — du massif chaleureux au contemporain graphique.</p><div class="m">Girardeau France · sur devis</div></div></div>
+
+    <div class="piece rev"><div class="ph"><img src="photos/relaxation.jpg" alt="Sur mesure"></div>
+      <div class="tx"><div class="n">Sur mesure</div><h3>Configuré pour votre pièce</h3><p>Canapés et angles composés de 20 en 20 cm, cuir ou tissu, dans la teinte et la profondeur que vous voulez. On dessine, vous validez.</p><div class="m">De 20 en 20 cm</div></div></div>
+  </div>
+</section>
+
+<section class="maison" id="maison">
+  <div class="wrap">
+    <div class="chap rev"><span class="num" style="color:var(--laiton-c)">02</span><span class="fil" style="background:linear-gradient(90deg,var(--laiton-c),transparent)"></span></div>
+    <h2 class="titre rev">Une maison, <em>pas une enseigne.</em></h2>
+    <p class="lead rev">Depuis 1860, six générations de conseil en Val de Sambre. Ce qu'une grande surface ne saura jamais faire : prendre le temps, connaître ses produits, et être recommandé de père en fils.</p>
+    <div class="chiffres">
+      <div class="ch rev"><div class="n">1860</div><div class="t">l'origine de la maison</div></div>
+      <div class="ch rev"><div class="n">6</div><div class="t">générations de conseil</div></div>
+      <div class="ch rev"><div class="n">2</div><div class="t">magasins face à face</div></div>
+      <div class="ch rev"><div class="n">4,0★</div><div class="t">sur Google, à faire grandir</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="wrap">
+    <div class="chap rev"><span class="num">03</span><span class="fil"></span></div>
+    <h2 class="titre rev">Recommandée, <em>depuis des années.</em></h2>
+    <div class="grille">
+      <div class="av rev"><div class="st">★★★★★</div><p>« Belle qualité, prix raisonnable. Merci à M. Nétange pour ses bons conseils — jamais déçue, je recommande cette ancienne maison ! »</p><div class="q">Cliente fidèle · Google</div></div>
+      <div class="av rev"><div class="st">★★★★★</div><p>« Literie de très bonne qualité, excellente livraison, sérieux. »</p><div class="q">Client · Google</div></div>
+      <div class="av rev"><div class="st">★★★★★</div><p>« Très satisfait de notre salon et de notre literie — livreur soigneux. On reviendra. »</p><div class="q">Client · Google</div></div>
+    </div>
+    <p class="src">Avis publics réels — Google (4,0/5).</p>
+  </div>
+</section>
+
+<section class="rdv" id="rdv">
+  <div class="wrap">
+    <div class="chap rev"><span class="num">04</span><span class="fil"></span></div>
+    <h2 class="titre rev">Prenez rendez-vous, <em>ou demandez un devis.</em></h2>
+    <div class="duo">
+      <div class="rev">
+        <p>Un projet précis ou une simple idée ? Décrivez-le en deux mots : on prépare votre visite,
+        on réunit les bons échantillons, ou on vous rappelle. Sans engagement.</p>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--laiton)">« Le bon meuble, c'est d'abord le bon conseil. »</p>
+        <p style="font-size:14px">Ou appelez : <b style="color:var(--anthra)">03 27 64 69 93</b></p>
+      </div>
+      <form class="rev" onsubmit="return rdv(event)">
+        <div><label>Votre projet</label>
+          <select><option>Salon / fauteuil de relaxation</option><option>Literie (matelas, sommier)</option><option>Canapé ou angle sur mesure</option><option>Séjour, table, chaises</option><option>Chambre, dressing, rangement</option><option>Autre / à définir</option></select>
+        </div>
+        <div><label>Nom &amp; téléphone</label><input type="text" placeholder="Votre nom · 06 …"></div>
+        <div><label>Message (facultatif)</label><textarea placeholder="Dimensions, style, budget approximatif…"></textarea></div>
+        <button class="btn btn-anthra" style="justify-self:start">Envoyer ma demande</button>
+        <p class="note">Démonstration — aucun message n'est envoyé.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="infos" id="infos">
+  <div class="wrap">
+    <div class="chap rev"><span class="num">05</span><span class="fil"></span></div>
+    <h2 class="titre rev">Deux magasins, <em>face à face.</em></h2>
+    <div class="grille">
+      <div class="mag rev"><div class="a">Magasin principal</div><h3>17 rue du Général de Gaulle</h3><p>59680 Ferrière-la-Grande — séjours, chambres, sur-mesure, chaises &amp; tables.</p></div>
+      <div class="mag rev"><div class="a">Magasin face à face</div><h3>8 rue du Général de Gaulle</h3><p>59680 Ferrière-la-Grande — literie, relaxation, canapés. Parking privé gratuit.</p></div>
+      <div class="mag rev"><div class="a">Horaires &amp; contact</div><h3>03 27 64 69 93</h3><ul>
+        <li><b>Lundi</b><span>15h – 18h30</span></li>
+        <li><b>Mar – Ven</b><span>9h30-12h · 14h30-18h30</span></li>
+        <li><b>Samedi</b><span>9h30-12h · 14h30-17h</span></li>
+        <li><b>Dimanche</b><span>Fermé</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="n">Meubles Nétange<span>.</span></div>
+  <div style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--laiton-c);margin-top:6px">Depuis 1860 · Val de Sambre</div>
+  <div style="margin-top:12px">17 &amp; 8 rue du Général de Gaulle, 59680 Ferrière-la-Grande · 03 27 64 69 93</div>
+  <div class="ev">Maquette de démonstration réalisée par <b>Everywhere</b> — piste « Contemporain ». Visuels = collections de la maison ; photos des magasins et de l'équipe à ajouter. Aucune donnée collectée.</div>
+</footer>
+
+<div class="modal" id="modal"><div class="box">
+  <h3 class="serif">Bien reçu.</h3>
+  <p id="mtxt">Votre demande est prête à partir chez Meubles Nétange.</p>
+  <div class="dtag">🛈 Démonstration — dans la vraie version, la maison reçoit votre demande et vous rappelle.</div>
+  <button class="btn btn-anthra" onclick="document.getElementById('modal').classList.remove('show')">Fermer</button>
+</div></div>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rev');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('vu')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target);}})},{rootMargin:'0px 0px -10% 0px'});
+  els.forEach(function(e){io.observe(e)});
+  if(/[ty]=\d/.test(location.hash)){els.forEach(function(e){e.classList.add('vu')});var my=location.hash.match(/y=(\d+)/);if(my){document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,+my[1]);}}
+  var t=document.getElementById('tick'); if(t){t.parentNode.appendChild(t.cloneNode(true));var x=0;(function b(){x=(x-0.4)%t.offsetWidth;t.parentNode.querySelectorAll('.row').forEach(function(r){r.style.transform='translateX('+x+'px)'});requestAnimationFrame(b);})();}
+})();
+function rdv(e){e.preventDefault();document.getElementById('modal').classList.add('show');return false;}
+</script>
+</body>
+</html>

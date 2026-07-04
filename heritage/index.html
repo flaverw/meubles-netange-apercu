@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Meubles Nétange — Depuis 1860, la maison du meuble en Val de Sambre · Ferrière-la-Grande</title>
+<meta name="description" content="Maison familiale depuis 1860, 6 générations. Literie, salons et fauteuils de relaxation, séjours, sur-mesure. Deux magasins face à face à Ferrière-la-Grande. Le conseil d'une ancienne maison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#f3ecdf; --creme-d:#e7ddc9; --encre:#26221b; --sepia:#5b4a34;
+  --vert:#3a4a3a; --vert-c:#586a55; --laiton:#a98a4e; --laiton-c:#c8a86a; --bois:#8a6a44;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--encre);background:var(--creme);font-size:17px;line-height:1.65}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.1}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:'Jost',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;padding:15px 28px;transition:.2s}
+.btn-vert{background:var(--vert);color:var(--creme)}
+.btn-vert:hover{background:#2c382c}
+.btn-laiton{background:var(--laiton);color:#fff}
+.btn-line{background:transparent;border:1px solid currentColor}
+.btn-line:hover{background:var(--encre);color:var(--creme);border-color:var(--encre)}
+
+.demo{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--encre);color:var(--creme);text-align:center;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px}
+.demo b{color:var(--laiton-c)}
+
+header.site{position:sticky;top:24px;z-index:150;background:rgba(243,236,223,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--creme-d)}
+header .wrap{display:flex;align-items:center;gap:20px;height:70px}
+.marque{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.marque .n{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;letter-spacing:.02em}
+.marque .s{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--laiton);margin-top:2px}
+header nav{margin-left:auto;display:flex;gap:6px;align-items:center}
+header nav a{font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:9px 12px;color:var(--sepia)}
+header nav a:hover{color:var(--encre)}
+header nav a.cta{background:var(--vert);color:var(--creme);padding:11px 18px}
+
+.hero{position:relative;min-height:82vh;display:grid;align-items:center;background:linear-gradient(90deg,rgba(38,34,27,.62),rgba(38,34,27,.15)),url('photos/relaxation.jpg') center/cover;isolation:isolate}
+.hero .wrap{padding:70px 22px;color:var(--creme)}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--laiton-c);margin-bottom:18px}
+.hero .eyebrow::before{content:"";width:40px;height:1px;background:var(--laiton-c)}
+.hero h1{color:var(--creme);font-size:clamp(38px,6.4vw,74px);max-width:15ch;font-weight:500}
+.hero h1 em{font-style:italic;color:var(--laiton-c)}
+.hero p{margin:20px 0 26px;font-size:19px;max-width:46ch;color:#e8ddc9;font-weight:400}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+
+.bandeau{background:var(--vert);color:var(--creme)}
+.bandeau .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 44px;padding:20px 22px;text-align:center}
+.bandeau div{font-size:13.5px;letter-spacing:.1em}
+.bandeau b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--laiton-c);display:block}
+
+section{padding:90px 0}
+.shead{text-align:center;margin-bottom:44px}
+.shead .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--laiton);font-weight:600}
+.shead h2{font-size:clamp(30px,4.4vw,46px);margin-top:8px}
+.shead p{max-width:56ch;margin:12px auto 0;color:var(--sepia)}
+
+.collections .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.col{background:#fff;border:1px solid var(--creme-d);overflow:hidden;display:flex;flex-direction:column}
+.col .ph{aspect-ratio:4/3;overflow:hidden}
+.col .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.col:hover .ph img{transform:scale(1.04)}
+.col .b{padding:22px;flex:1;display:flex;flex-direction:column}
+.col h3{font-size:25px;margin-bottom:6px}
+.col p{font-size:14.5px;color:var(--sepia);flex:1}
+.col .lien{margin-top:14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--laiton);font-weight:600}
+
+.histoire{background:var(--encre);color:var(--creme)}
+.histoire .duo{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.histoire .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--laiton-c);font-weight:600}
+.histoire h2{font-size:clamp(30px,4.4vw,50px);margin:8px 0 18px;color:var(--creme)}
+.histoire h2 em{font-style:italic;color:var(--laiton-c)}
+.histoire p{margin-bottom:14px;color:#d6cbb6}
+.histoire .jalons{margin-top:24px;display:grid;gap:0}
+.histoire .jl{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:14px 0;border-top:1px solid rgba(201,168,106,.28)}
+.histoire .jl .an{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--laiton-c)}
+.histoire .jl .t{font-size:14.5px;color:#d6cbb6}
+.histoire .cadre img{border:6px solid #322c22;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+
+.conseil .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.cc{background:#fff;border:1px solid var(--creme-d);padding:26px;text-align:center}
+.cc .ic{font-size:26px;margin-bottom:10px}
+.cc h3{font-size:23px;margin-bottom:8px}
+.cc p{font-size:14px;color:var(--sepia)}
+
+.avis{background:var(--creme-d)}
+.avis .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.av{background:#fff;padding:28px;border-top:3px solid var(--laiton)}
+.av .st{color:var(--laiton);letter-spacing:3px}
+.av p{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;line-height:1.4;margin:12px 0;color:var(--encre)}
+.av .q{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sepia)}
+.avis .src{text-align:center;margin-top:22px;color:var(--sepia);font-size:14px}
+
+.rdv{background:var(--vert);color:var(--creme)}
+.rdv .duo{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.rdv h2{font-size:clamp(28px,4vw,44px);color:var(--creme)}
+.rdv h2 em{font-style:italic;color:var(--laiton-c)}
+.rdv p{color:#d6cbb6;margin:14px 0}
+.rdv form{background:rgba(243,236,223,.06);border:1px solid rgba(201,168,106,.3);padding:26px;display:grid;gap:14px}
+.rdv label{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--laiton-c);display:block;margin-bottom:5px}
+.rdv input,.rdv select,.rdv textarea{width:100%;background:rgba(243,236,223,.95);border:0;padding:12px 14px;font-family:'Jost',sans-serif;font-size:15px;color:var(--encre)}
+.rdv textarea{min-height:80px;resize:vertical}
+.rdv .note{font-size:12px;color:#b6ab96;text-align:center}
+
+.infos{background:var(--creme)}
+.infos .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.mag{background:#fff;border:1px solid var(--creme-d);padding:26px}
+.mag h3{font-size:23px;margin-bottom:4px}
+.mag .a{font-size:14px;color:var(--laiton);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.mag p,.mag li{font-size:14.5px;color:var(--sepia)}
+.mag ul{list-style:none;margin-top:6px}
+.mag li{display:flex;justify-content:space-between;gap:10px;padding:2px 0}
+.mag li b{color:var(--encre)}
+
+footer{background:var(--encre);color:#b6ab96;text-align:center;padding:44px 22px}
+footer .n{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--creme)}
+footer .s{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--laiton-c);margin:4px 0 14px}
+footer .ev{margin-top:16px;font-size:12px;color:#8a7e68}
+footer .ev b{color:var(--laiton-c)}
+
+.modal{position:fixed;inset:0;background:rgba(20,16,10,.6);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}
+.modal.show{display:flex}
+.modal .box{background:var(--creme);padding:34px;max-width:430px;text-align:center}
+.modal h3{font-size:28px;margin-bottom:8px}
+.modal p{color:var(--sepia)}
+.modal .dtag{background:#fff;border:1px solid var(--creme-d);padding:11px;font-size:13px;margin:14px 0;color:var(--vert)}
+
+body.qa .hero{min-height:auto}
+body.qa .hero .wrap{padding-top:120px;padding-bottom:70px}
+@media(max-width:860px){
+  .histoire .duo,.rdv .duo{grid-template-columns:1fr}
+  .histoire .cadre{order:-1}
+  header nav a:not(.cta){display:none}
+  .hero{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<div class="demo">Maquette de démonstration — <b>Everywhere</b> · piste « Héritage 1860 » · aucune donnée collectée</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="marque" href="#haut"><span class="n">Meubles Nétange</span><span class="s">Depuis 1860 · Val de Sambre</span></a>
+    <nav>
+      <a href="#collections">Collections</a>
+      <a href="#histoire">La maison</a>
+      <a href="#avis">Avis</a>
+      <a href="#infos">Nos magasins</a>
+      <a href="#rdv" class="cta">Prendre rendez-vous</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="haut">
+  <div class="wrap">
+    <div class="eyebrow">Maison familiale · 6 générations</div>
+    <h1>Le meuble se choisit <em>bien accompagné.</em></h1>
+    <p>Depuis 1860, la maison Nétange habille les intérieurs du Val de Sambre — literie, relaxation, séjours, sur-mesure. Deux magasins face à face, un conseil qui se transmet.</p>
+    <div class="actions">
+      <a class="btn btn-laiton" href="#rdv">Prendre rendez-vous</a>
+      <a class="btn btn-line" style="color:var(--creme)" href="#collections">Voir les collections</a>
+    </div>
+  </div>
+</div>
+
+<div class="bandeau">
+  <div class="wrap">
+    <div><b>1860</b> six générations</div>
+    <div><b>2 magasins</b> face à face, centre-ville</div>
+    <div><b>Sur mesure</b> canapés &amp; angles, cuir ou tissu</div>
+    <div><b>Parking</b> privé gratuit</div>
+  </div>
+</div>
+
+<section class="collections" id="collections">
+  <div class="wrap">
+    <div class="shead">
+      <div class="k">Nos collections</div>
+      <h2>Ce que l'on choisit chez Nétange</h2>
+      <p>Des marques sélectionnées et un savoir-faire de vendeur-conseil, pour chaque pièce de la maison.</p>
+    </div>
+    <div class="grille">
+      <div class="col"><div class="ph"><img src="photos/relaxation-cuir.jpg" alt="Salons et fauteuils de relaxation"></div>
+        <div class="b"><h3>Relaxation</h3><p>Salons, canapés et fauteuils de relaxation, motorisés, cuir ou tissu. Le confort qui se règle au millimètre.</p><span class="lien">Découvrir →</span></div></div>
+      <div class="col"><div class="ph"><img src="photos/produit.jpg" alt="Literie Epeda, Dunlopillo"></div>
+        <div class="b"><h3>Literie</h3><p>Matelas et sommiers Epeda, Dunlopillo — ressorts, latex, mémoire de forme, sommiers et têtes électriques.</p><span class="lien">Découvrir →</span></div></div>
+      <div class="col"><div class="ph"><img src="photos/sejour.jpg" alt="Séjours, tables et chaises"></div>
+        <div class="b"><h3>Séjours &amp; chambres</h3><p>Buffets, tables et chaises (Girardeau France), chambres et dressings — du chêne massif au contemporain.</p><span class="lien">Découvrir →</span></div></div>
+      <div class="col"><div class="ph"><img src="photos/relaxation.jpg" alt="Canapés sur mesure cuir ou tissu"></div>
+        <div class="b"><h3>Sur mesure</h3><p>Canapés et angles configurés de 20 en 20 cm, cuir ou tissu — pensés pour votre pièce, pas l'inverse.</p><span class="lien">Découvrir →</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="histoire" id="histoire">
+  <div class="wrap">
+    <div class="duo">
+      <div>
+        <div class="k">La maison</div>
+        <h2>Six générations, <em>un même conseil.</em></h2>
+        <p>Ancien fabricant devenu spécialiste, Meubles Nétange sert les familles du Val de Sambre
+        <b>depuis 1860</b>. Six générations plus tard, on y vient toujours pour la même raison :
+        <b>être bien conseillé</b> — sans pression, par quelqu'un qui connaît ses produits.</p>
+        <p>« Merci à M. Nétange pour ses bons conseils », écrivent les clients fidèles. C'est cela,
+        une ancienne maison : le temps de bien faire, et la fierté d'être recommandé de génération en génération.</p>
+        <div class="jalons">
+          <div class="jl"><div class="an">1860</div><div class="t">Les débuts de la maison Nétange, ancien fabricant de meubles.</div></div>
+          <div class="jl"><div class="an">Aujourd'hui</div><div class="t">Deux grands magasins face à face en centre-ville de Ferrière-la-Grande, parking privé gratuit.</div></div>
+          <div class="jl"><div class="an">Demain</div><div class="t">Le même engagement : la qualité, le conseil, le service — en Val de Sambre.</div></div>
+        </div>
+      </div>
+      <div class="cadre"><img src="photos/sejour-tolede.jpg" alt="Un séjour Meubles Nétange"></div>
+    </div>
+  </div>
+</section>
+
+<section class="conseil">
+  <div class="wrap">
+    <div class="shead"><div class="k">Pourquoi une maison indépendante</div><h2>Ce qu'une enseigne ne remplace pas</h2></div>
+    <div class="grille">
+      <div class="cc"><div class="ic">👋</div><h3>Le conseil</h3><p>Un vendeur qui connaît chaque produit et prend le temps — cité nommément dans vos avis.</p></div>
+      <div class="cc"><div class="ic">📐</div><h3>Le sur-mesure</h3><p>Canapés et angles configurés pour votre pièce, cuir ou tissu, au centimètre.</p></div>
+      <div class="cc"><div class="ic">🚚</div><h3>La livraison soignée</h3><p>« Livreur soigneux », « excellente livraison » — la maison finit le travail chez vous.</p></div>
+      <div class="cc"><div class="ic">🕰️</div><h3>La durée</h3><p>165 ans, six générations : on ne bâtit pas une telle fidélité sur un prix barré.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="wrap">
+    <div class="shead"><div class="k">Ils reviennent depuis des années</div><h2>La parole des clients</h2></div>
+    <div class="grille">
+      <div class="av"><div class="st">★★★★★</div><p>« Très contente de mon canapé depuis plusieurs années. Belle qualité, prix raisonnable. Merci à M. Nétange pour ses bons conseils — jamais déçue, je recommande cette ancienne maison ! »</p><div class="q">Cliente fidèle · Google</div></div>
+      <div class="av"><div class="st">★★★★★</div><p>« Literie de très bonne qualité, excellente livraison, sérieux. »</p><div class="q">Client · Google</div></div>
+      <div class="av"><div class="st">★★★★★</div><p>« Très satisfait de notre salon et de notre literie, et de leurs livraisons — livreur soigneux. On reviendra. »</p><div class="q">Client · Google</div></div>
+    </div>
+    <p class="src">Avis publics réels — Google (4,0/5). Une maison de proximité, recommandée de génération en génération.</p>
+  </div>
+</section>
+
+<section class="rdv" id="rdv">
+  <div class="wrap">
+    <div class="duo">
+      <div>
+        <h2>Prenez rendez-vous, <em>ou demandez un devis.</em></h2>
+        <p>Un projet de literie, un salon de relaxation, un séjour sur mesure ? Dites-nous en deux mots,
+        et l'on prépare votre visite — ou l'on vous rappelle. Sans engagement.</p>
+        <p style="color:var(--laiton-c);font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic">« Le bon meuble, c'est d'abord le bon conseil. »</p>
+        <p style="font-size:14px">Ou appelez directement : <b style="color:var(--creme)">03 27 64 69 93</b></p>
+      </div>
+      <form onsubmit="return rdv(event)">
+        <div><label>Votre projet</label>
+          <select><option>Literie (matelas, sommier)</option><option>Salon / fauteuil de relaxation</option><option>Canapé ou angle sur mesure</option><option>Séjour, table, chaises</option><option>Chambre, dressing, rangement</option><option>Autre / je ne sais pas encore</option></select>
+        </div>
+        <div><label>Nom &amp; téléphone</label><input type="text" placeholder="Votre nom · 06 …"></div>
+        <div><label>Message (facultatif)</label><textarea placeholder="Dimensions, style, budget approximatif…"></textarea></div>
+        <button class="btn btn-laiton" style="justify-self:start">Demander un rendez-vous</button>
+        <p class="note">Démonstration — aucun message n'est envoyé. La vraie version prévient la maison par e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="infos" id="infos">
+  <div class="wrap">
+    <div class="shead"><div class="k">Nous rendre visite</div><h2>Deux magasins, face à face</h2><p>En centre-ville de Ferrière-la-Grande, à 3 km au sud de Maubeuge. Parking privé gratuit.</p></div>
+    <div class="grille">
+      <div class="mag"><div class="a">Magasin principal</div><h3>17 rue du Général de Gaulle</h3><p>59680 Ferrière-la-Grande — séjours, chambres, sur-mesure, chaises &amp; tables.</p></div>
+      <div class="mag"><div class="a">Magasin face à face</div><h3>8 rue du Général de Gaulle</h3><p>59680 Ferrière-la-Grande — literie, relaxation, canapés.</p></div>
+      <div class="mag"><div class="a">Horaires &amp; contact</div><h3>03 27 64 69 93</h3><ul>
+        <li><b>Lundi</b><span>15h – 18h30</span></li>
+        <li><b>Mar – Ven</b><span>9h30-12h · 14h30-18h30</span></li>
+        <li><b>Samedi</b><span>9h30-12h · 14h30-17h</span></li>
+        <li><b>Dimanche</b><span>Fermé</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="n">Meubles Nétange</div>
+  <div class="s">Depuis 1860 · Val de Sambre</div>
+  <div>17 &amp; 8 rue du Général de Gaulle, 59680 Ferrière-la-Grande · 03 27 64 69 93</div>
+  <div class="ev">Maquette de démonstration réalisée par <b>Everywhere</b> — piste « Héritage 1860 ». Visuels = collections de la maison ; photos des magasins et de l'équipe à ajouter. Aucune donnée collectée.</div>
+</footer>
+
+<div class="modal" id="modal"><div class="box">
+  <h3 class="serif">Merci !</h3>
+  <p id="mtxt">Votre demande est prête à partir chez Meubles Nétange.</p>
+  <div class="dtag">🛈 Démonstration — dans la vraie version, la maison reçoit votre demande par e-mail et vous rappelle.</div>
+  <button class="btn btn-vert" onclick="document.getElementById('modal').classList.remove('show')">Fermer</button>
+</div></div>
+
+<script>
+if(/[ty]=\d/.test(location.hash))document.body.classList.add('qa');
+function rdv(e){e.preventDefault();document.getElementById('modal').classList.add('show');return false;}
+</script>
+</body>
+</html>
