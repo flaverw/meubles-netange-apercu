@@ -1,0 +1,9 @@
+{
+  "protege": true,
+  "roles": [
+    "client"
+  ],
+  "iters": 210000,
+  "fichiers": 4,
+  "date": "voir git"
+}
