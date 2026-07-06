@@ -245,6 +245,7 @@ input,select,textarea{width:100%;background:var(--creme);border:1px solid var(--
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--or);
   box-shadow:0 0 0 3px rgba(184,146,90,.16)}
 textarea{min-height:82px;resize:vertical}
+form .deux{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
   font-family:'Inter',sans-serif;font-weight:600;font-size:13px;letter-spacing:.14em;
   text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;padding:15px 26px;
@@ -297,6 +298,14 @@ footer{position:relative;color:var(--creme);padding:80px clamp(18px,4vw,54px) 48
   margin:16px 0;color:var(--sepia)}
 .modal .btn{justify-self:center;margin:0 auto}
 
+/* ---- pastille : l'autre version ---- */
+.autreversion{position:fixed;left:16px;bottom:16px;z-index:380;display:inline-flex;align-items:center;gap:8px;
+  background:var(--encre);color:var(--creme);border:1px solid rgba(184,146,90,.5);
+  padding:10px 15px;text-decoration:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;box-shadow:0 12px 30px -12px rgba(28,23,18,.6);transition:.25s}
+.autreversion:hover{border-color:var(--or);color:#fff}
+.autreversion .d{color:var(--or-clair);font-size:13px}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -319,6 +328,7 @@ footer{position:relative;color:var(--creme);padding:80px clamp(18px,4vw,54px) 48
   .face-milieu{padding:6px 0}
   .face-milieu .ln{width:60px;height:1px;min-height:0}
   .enseigne .tel{display:none}
+  form .deux{grid-template-columns:1fr}
 }
 
 /* reduced motion */
@@ -562,7 +572,7 @@ body.qa .station .noeud{background:var(--or)}
         <span style="color:var(--sepia-clair);font-size:13px">Parking privé gratuit · Ferrière-la-Grande, à 3 km au sud de Maubeuge.</span></p>
     </div>
     <form onsubmit="return envoyer(event)">
-      <div class="titre serif">Prendre rendez-vous</div>
+      <div class="titre serif">Prendre rendez-vous au showroom</div>
       <div>
         <label for="projet">Votre projet</label>
         <select id="projet">
@@ -574,6 +584,26 @@ body.qa .station .noeud{background:var(--or)}
           <option>Autre / je ne sais pas encore</option>
         </select>
       </div>
+      <div class="deux">
+        <div>
+          <label for="jour">Jour souhaité</label>
+          <select id="jour">
+            <option>Lundi (dès 15 h)</option>
+            <option>Mardi</option>
+            <option>Mercredi</option>
+            <option>Jeudi</option>
+            <option>Vendredi</option>
+            <option>Samedi (jusqu'à 17 h)</option>
+          </select>
+        </div>
+        <div>
+          <label for="creneau">Créneau</label>
+          <select id="creneau">
+            <option>Matin (9 h 30 – 12 h)</option>
+            <option>Après-midi (14 h 30 – 18 h 30)</option>
+          </select>
+        </div>
+      </div>
       <div>
         <label for="coord">Nom &amp; téléphone</label>
         <input id="coord" type="text" placeholder="Votre nom · 06 …" autocomplete="name">
@@ -583,7 +613,7 @@ body.qa .station .noeud{background:var(--or)}
         <textarea id="msg" placeholder="Dimensions, style, budget approximatif…"></textarea>
       </div>
       <button class="btn" type="submit">Demander un rendez-vous</button>
-      <p class="note">Démonstration — aucun message n'est envoyé. La vraie version prévient la maison par e-mail.</p>
+      <p class="note">Démonstration — module optionnel, activable plus tard. Aucun message n'est envoyé.</p>
     </form>
   </div>
 </section>
@@ -636,11 +666,13 @@ body.qa .station .noeud{background:var(--or)}
   </div>
 </footer>
 
+<a class="autreversion" href="../contemporain/"><span class="d">◇</span>Voir l'autre version</a>
+
 <div class="modal" id="modal">
   <div class="box">
     <h3 class="serif">Merci.</h3>
     <p id="mtxt">Votre demande est prête à partir chez Meubles Nétange.</p>
-    <div class="dtag">Démonstration — dans la vraie version, la maison reçoit votre demande par e-mail et vous rappelle.</div>
+    <div class="dtag">Démonstration — module optionnel, activable plus tard : dans la vraie version, la maison reçoit votre demande par e-mail et vous rappelle.</div>
     <button class="btn" type="button" onclick="document.getElementById('modal').classList.remove('show')">Fermer</button>
   </div>
 </div>

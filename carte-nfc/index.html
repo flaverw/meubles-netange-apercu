@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Meubles Nétange — carte NFC recto-verso · 85,6 × 54 mm · démonstration Everywhere</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page{size:85.6mm 54mm;margin:0}
+:root{
+  --encre:#1c1712;
+  --creme:#f2e9d8;
+  --creme-2:#e9ddc6;
+  --or:#b8925a;
+  --or-clair:#d4b483;
+  --sepia:#6b5638;
+  --sepia-clair:#8a7250;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#141009;color:var(--creme);line-height:1.5}
+.serif{font-family:'Fraunces','Georgia',serif}
+
+/* ---- veinage bois, CSS pur (repris de la maquette « La Lignée ») ---- */
+.veinage{
+  background-color:var(--encre);
+  background-image:
+    repeating-linear-gradient(92deg,
+      rgba(0,0,0,.28) 0 2px, rgba(255,255,255,.012) 2px 5px,
+      rgba(0,0,0,.14) 5px 9px, rgba(184,146,90,.05) 9px 13px,
+      rgba(0,0,0,.24) 13px 17px, transparent 17px 30px),
+    repeating-linear-gradient(88deg,
+      rgba(0,0,0,.16) 0 1px, transparent 1px 60px),
+    radial-gradient(160% 120% at 20% 0%, rgba(184,146,90,.12), transparent 55%),
+    radial-gradient(120% 90% at 90% 100%, rgba(122,90,54,.18), transparent 60%);
+}
+
+/* ============================================================
+   LES DEUX FACES — 85,6 × 54 mm exactement (ISO ID-1)
+   ============================================================ */
+.carte{width:85.6mm;height:54mm;overflow:hidden;position:relative}
+
+/* ---- RECTO : la maison ---- */
+.recto{color:var(--creme);display:flex;flex-direction:column;
+  padding:5mm 5mm 4mm;border-top:1.6mm solid var(--or)}
+.recto .n{font-family:'Fraunces',serif;font-weight:500;font-size:6.6mm;line-height:1;letter-spacing:.01em}
+.recto .s{font-size:2mm;letter-spacing:.3em;text-transform:uppercase;color:var(--or-clair);
+  margin-top:1.6mm;font-weight:600}
+.recto .filet{width:18mm;height:.3mm;background:var(--or);margin:2.6mm 0;opacity:.75}
+.recto .tag{font-family:'Fraunces',serif;font-style:italic;font-size:3.4mm;line-height:1.25;
+  color:#e6d9c0;max-width:52mm}
+.recto .bas{margin-top:auto;font-size:2mm;letter-spacing:.06em;color:#cabd9f;line-height:1.5}
+.recto .bas b{color:var(--or-clair);font-weight:600}
+
+/* ---- VERSO : le contact + QR ---- */
+.verso{background:var(--creme);color:var(--encre);display:flex}
+.verso .gauche{width:31mm;background:#fff;border-right:.3mm solid var(--creme-2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3mm}
+.verso .cadre{width:22.6mm;height:22.6mm;padding:.8mm;border:.3mm solid var(--or)}
+.verso .cadre img{width:100%;height:100%;display:block}
+.verso .scan{margin-top:1.8mm;font-size:1.9mm;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sepia-clair);text-align:center;line-height:1.5;font-weight:600}
+.verso .droite{flex:1;padding:4.4mm 4mm 3.6mm 4.4mm;display:flex;flex-direction:column}
+.verso .pn{font-family:'Fraunces',serif;font-weight:500;font-size:4mm;line-height:1}
+.verso .ps{font-size:1.8mm;letter-spacing:.26em;text-transform:uppercase;color:var(--or);
+  margin-top:1.2mm;font-weight:600}
+.verso .coord{margin-top:2.8mm;font-size:2.3mm;line-height:1.7;color:var(--sepia)}
+.verso .coord b{color:var(--encre);font-weight:600}
+.verso .tel{font-family:'Fraunces',serif;font-size:4.2mm;color:var(--encre);margin-top:1.6mm}
+.verso .bas{margin-top:auto;font-family:'Fraunces',serif;font-style:italic;
+  font-size:2.7mm;color:var(--or)}
+
+/* ============================================================
+   ÉCRAN — présentation, masquée à l'impression
+   ============================================================ */
+.ecran{max-width:860px;margin:0 auto;padding:40px 22px 70px}
+.ecran header{text-align:center;margin-bottom:36px}
+.ecran .sur{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--or-clair);
+  font-weight:600;margin-bottom:12px}
+.ecran h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4.6vw,40px);line-height:1.08}
+.ecran h1 em{font-style:italic;color:var(--or-clair)}
+.ecran .sous{margin:12px auto 0;color:#cabd9f;max-width:60ch;font-size:15px}
+.faces{display:flex;gap:34px;flex-wrap:wrap;justify-content:center}
+.face .et{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--or-clair);
+  font-weight:600;margin-bottom:10px;text-align:center}
+.face .carte{border-radius:3.18mm;box-shadow:0 24px 60px -22px rgba(0,0,0,.85)}
+.notes{margin:44px auto 0;max-width:620px;border:1px solid rgba(184,146,90,.3);padding:22px 26px;
+  font-size:13.5px;color:#cabd9f}
+.notes .t{font-family:'Fraunces',serif;font-size:19px;color:var(--creme);margin-bottom:10px}
+.notes li{margin:6px 0 6px 18px}
+.notes b{color:var(--or-clair);font-weight:600}
+.pied{margin-top:30px;text-align:center;font-size:12px;color:#8a7e68}
+.pied a{color:var(--or-clair);text-decoration:none}
+.imprimer{display:inline-flex;margin:26px auto 0;align-items:center;gap:10px;cursor:pointer;
+  background:var(--or);color:#fff;border:0;padding:14px 26px;font-family:'Inter',sans-serif;
+  font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+.imprimer:hover{background:var(--or-clair);color:var(--encre)}
+.centre{text-align:center}
+
+@media(max-width:720px){.faces{gap:26px}}
+
+/* ============================================================
+   IMPRESSION — une face par page, à l'échelle exacte
+   ============================================================ */
+@media print{
+  body{background:none}
+  .ecran{max-width:none;margin:0;padding:0}
+  .ecran header,.notes,.pied,.imprimer,.face .et,.centre{display:none}
+  .faces{display:block;gap:0}
+  .face{page-break-after:always}
+  .face:last-child{page-break-after:auto}
+  .face .carte{border-radius:0;box-shadow:none;margin:0}
+  .veinage{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .carte,.verso .gauche{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="ecran">
+  <header>
+    <div class="sur">Meubles Nétange · Depuis 1860 — démonstration</div>
+    <h1>La carte NFC, <em>recto-verso.</em></h1>
+    <p class="sous">Format carte bancaire (85,6 × 54 mm). On l'approche d'un téléphone — ou l'on scanne
+    le code — et le site de la maison s'ouvre. Prototype préparé par Everywhere, à valider ensemble.</p>
+  </header>
+
+  <div class="faces">
+    <div class="face">
+      <div class="et">Recto</div>
+      <div class="carte recto veinage">
+        <div class="n serif">Meubles Nétange</div>
+        <div class="s">Depuis 1860 · Val de Sambre</div>
+        <div class="filet"></div>
+        <div class="tag">Le meuble se choisit<br>bien accompagné.</div>
+        <div class="bas"><b>Deux magasins face à face</b><br>rue du Général de Gaulle · Ferrière-la-Grande</div>
+      </div>
+    </div>
+
+    <div class="face">
+      <div class="et">Verso</div>
+      <div class="carte verso">
+        <div class="gauche">
+          <div class="cadre"><img src="qr-netange.png" alt="QR — le site Meubles Nétange"></div>
+          <div class="scan">Approchez le téléphone<br>ou scannez</div>
+        </div>
+        <div class="droite">
+          <div class="pn serif">Meubles Nétange</div>
+          <div class="ps">Depuis 1860</div>
+          <div class="coord">
+            <b>17 &amp; 8 rue du Général de Gaulle</b><br>
+            59680 Ferrière-la-Grande<br>
+            Parking privé gratuit
+          </div>
+          <div class="tel serif">03 27 64 69 93</div>
+          <div class="bas">Nos collections en ligne</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="centre"><button class="imprimer" type="button" onclick="window.print()">Imprimer les deux faces</button></div>
+
+  <div class="notes">
+    <div class="t">Notes d'impression</div>
+    <ul>
+      <li>Format <b>85,6 × 54 mm</b> (ISO ID-1, le format d'une carte bancaire) — imprimer à l'<b>échelle 100 %</b>, sans marges : une face par page.</li>
+      <li>Le <b>QR</b> ouvre la démonstration en ligne du site ; la <b>puce NFC</b> s'encode séparément vers la même adresse.</li>
+      <li>Coordonnées reprises du dossier : deux magasins face à face aux 17 &amp; 8 rue du Général de Gaulle, 59680 Ferrière-la-Grande · 03 27 64 69 93 · parking privé gratuit.</li>
+      <li>« Depuis 1860 » : héritage revendiqué par la maison, repris tel quel.</li>
+    </ul>
+  </div>
+
+  <p class="pied">Prototype Everywhere — démonstration, non indexée. <a href="../">← Revenir à la démonstration</a></p>
+</div>
+</body>
+</html>
