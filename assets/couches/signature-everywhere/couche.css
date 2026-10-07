@@ -1,0 +1,64 @@
+/* Signature Everywhere : fin bandeau tout en haut des sites que nous créons.
+   Deux liens actifs : le mot EVERYWHERE en lettres-films (joué une fois, rejoué au survol) et un accès direct « Créer le vôtre ». */
+/* style:debut */
+.c-signature-everywhere{
+  --fond:#f4efe7;
+  --surface:#fbf8f3;
+  --encre:#1b2232;
+  --encre-douce:#555b68;
+  --accent:#8b4a1e;
+  --focus:#8b4a1e;
+  --police-texte:'Lato',system-ui,sans-serif;
+  --sur-accent:#fbf8f3;
+  --accent-2:#c98b52;
+  --signal:#c98b52;
+  --nuit:#141a27;
+  --creme:#f4efe7;
+  --police-titre:'Playfair Display',Georgia,serif;
+  --police-repere:'Space Mono',ui-monospace,monospace;
+}
+/* style:fin */
+.c-signature-everywhere{
+  background:var(--surface);color:var(--encre-douce);
+  font:400 13px/1 var(--police-texte);letter-spacing:.02em;
+  border-bottom:1px solid color-mix(in srgb,var(--encre) 12%,transparent);
+}
+.c-signature-everywhere .se-in{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:42px;padding:0 clamp(16px,5vw,72px);max-width:none;
+}
+.c-signature-everywhere a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:10px;min-height:42px}
+.c-signature-everywhere a:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+/* la pastille charbon reprend l'identité d'every-where.fr : les lettres-films restent lisibles sur tout fond */
+.c-signature-everywhere .se-pastille{
+  display:inline-flex;align-items:flex-end;gap:5px;padding:6px 10px 6px 11px;border-radius:999px;
+  background:#0d0d0b;box-shadow:0 0 0 1px rgba(255,255,255,.08);
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;
+}
+.c-signature-everywhere .se-logo{display:block;flex:none;height:17px;aspect-ratio:1120/120}
+.c-signature-everywhere .se-point{flex:none;width:6px;height:6px;margin-bottom:1px;border-radius:50%;background:#f0532a}
+.c-signature-everywhere .se-v{
+  display:block;width:100%;height:100%;object-fit:fill;
+  -webkit-mask:url(media/everywhere-masque.png) center/100% 100% no-repeat;
+          mask:url(media/everywhere-masque.png) center/100% 100% no-repeat;
+  filter:brightness(1.45) saturate(1.15);              /* vidéo sombre sur charbon : on l'éclaire, comme sur every-where.fr */
+}
+.c-signature-everywhere .se-marque:hover .se-pastille{transform:translateY(-1px);box-shadow:0 0 0 1px #f0532a}
+.c-signature-everywhere .se-acces{color:var(--accent);font-weight:700;gap:6px}
+.c-signature-everywhere .se-acces span{display:inline-block;transition:transform .3s}
+.c-signature-everywhere .se-acces:hover{text-decoration:underline;text-underline-offset:3px}
+.c-signature-everywhere .se-acces:hover span{transform:translateX(3px)}
+.c-signature-everywhere .se-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:420px){
+  .c-signature-everywhere{font-size:12px}
+  .c-signature-everywhere .se-logo{height:14px}
+  .c-signature-everywhere .se-pastille{padding:5px 8px 5px 9px}
+  .c-signature-everywhere .se-par-long{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .c-signature-everywhere .se-pastille,.c-signature-everywhere .se-acces span{transition:none}
+}
+@media (forced-colors:active){
+  .c-signature-everywhere .se-v{-webkit-mask:none;mask:none}
+  .c-signature-everywhere .se-pastille{border:1px solid LinkText}
+}

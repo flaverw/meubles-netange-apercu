@@ -1,0 +1,140 @@
+/* style:debut */
+.c-mur-catalogue{
+  --fond:#f4efe7;
+  --surface:#fbf8f3;
+  --encre:#1b2232;
+  --encre-douce:#555b68;
+  --accent:#8b4a1e;
+  --sur-accent:#fbf8f3;
+  --accent-2:#c98b52;
+  --signal:#c98b52;
+  --nuit:#141a27;
+  --mc-ink:#F6F2EC;
+  --mc-voile:rgb(11 8 9 / .94);
+  --police-titre:'Playfair Display',Georgia,serif;
+  --police-texte:'Lato',system-ui,sans-serif;
+  --police-repere:'Space Mono',ui-monospace,monospace;
+  --focus:#8b4a1e;
+  --creme:#f4efe7;
+}
+/* style:fin */
+
+/* Le mur du catalogue. Deux états, et c'est tout le dessin de la couche :
+     — AU REPOS (sans script, en mouvement réduit) : une grille complète, chaque
+       pièce une seule fois, toutes les étiquettes lisibles ;
+     — EN MARCHE ([data-pret], posé par le script) : des colonnes qui descendent
+       sans fin, à des vitesses différentes et dans les deux sens.
+   Le script ne décore pas un mur déjà là : il le MONTE. C'est la seule façon
+   d'avoir le bon nombre de colonnes à chaque largeur sans jamais perdre de pièce. */
+
+.c-mur-catalogue{ position:relative; overflow:hidden;
+  background:var(--nuit); color:var(--mc-ink);
+  font-family:var(--police-texte);
+  padding-block:clamp(44px,7vw,96px);
+  --mx:0; --my:0;                       /* inclinaison, posée par le script */
+}
+.c-mur-catalogue *{ box-sizing:border-box; }
+.c-mur-catalogue img{ max-width:100%; display:block; }
+
+.c-mur-catalogue .mc-tete{ position:relative; z-index:3; text-align:center;
+  width:min(1180px,100% - 2*clamp(16px,4vw,48px)); margin:0 auto clamp(26px,4vw,48px); }
+.c-mur-catalogue .mc-tete h2{ font-family:var(--police-titre);
+  font-size:clamp(32px,6vw,68px); line-height:1.1; margin:0 0 12px; color:var(--mc-ink); }
+.c-mur-catalogue .mc-tete p{ margin:0 auto; max-width:48ch;
+  color:color-mix(in srgb,var(--mc-ink) 80%,var(--nuit)); }
+
+/* ── Au repos : une grille, pas un mur ───────────────────────────────────── */
+.c-mur-catalogue .mc-source{ display:grid; gap:clamp(8px,1vw,14px);
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  width:min(1400px,100% - 2*clamp(16px,4vw,48px)); margin-inline:auto; }
+
+/* ── En marche : le mur ──────────────────────────────────────────────────── */
+.c-mur-catalogue[data-pret] .mc-scene{
+  display:grid; grid-template-columns:repeat(var(--n,6),1fr); gap:clamp(8px,1vw,14px);
+  height:clamp(520px,78vh,960px);
+  padding-inline:4px;                 /* sinon l'anneau de focus de la 1re colonne est coupé */
+  perspective:1400px; transform-style:preserve-3d;
+  transform:rotateX(calc(var(--my) * -2.6deg)) rotateY(calc(var(--mx) * 3.2deg));
+  transition:transform .5s cubic-bezier(.2,.8,.3,1);
+  /* les bords s'effacent : le mur n'a ni début ni fin visible */
+  mask-image:linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);
+}
+.c-mur-catalogue[data-pret] .mc-col{ display:flex; flex-direction:column;
+  gap:clamp(8px,1vw,14px); will-change:transform;
+  animation:mc-defile var(--d,56s) linear infinite; }
+.c-mur-catalogue[data-pret] .mc-col:nth-child(2n){ animation-direction:reverse; }
+/* le contenu de chaque colonne est RÉPÉTÉ TROIS FOIS par le script : on en
+   parcourt deux tiers, ce qui ramène exactement sur le premier tiers — la boucle
+   n'a pas de couture. Répétition et pourcentage vont ensemble, toujours. */
+@keyframes mc-defile{ from{ transform:translateY(0); } to{ transform:translateY(-66.6667%); } }
+/* ⚠️ La première version RALENTISSAIT sous la souris (animation-duration × 2,4).
+   Deux défauts : changer la durée en cours d'animation recalcule la progression,
+   donc le mur saute à l'entrée et à la sortie du pointeur ; et un mur arrêté
+   repartait au survol, ce qui contredit le bouton. On met en PAUSE, et c'est tout
+   — c'est aussi ce qui permet de lire une étiquette et de viser un lien. */
+.c-mur-catalogue[data-pret] .mc-scene:hover .mc-col,
+.c-mur-catalogue[data-pret] .mc-scene:focus-within .mc-col{ animation-play-state:paused; }
+
+.c-mur-catalogue .mc-groupe{ display:contents; }
+
+.c-mur-catalogue .mc-piece{ position:relative; display:block; border-radius:2px;
+  overflow:hidden; background:color-mix(in srgb,var(--nuit) 80%,#000);
+  text-decoration:none; color:inherit; }
+.c-mur-catalogue .mc-piece img{ width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; }
+.c-mur-catalogue[data-pret] .mc-piece img{ filter:saturate(.86) brightness(.86);
+  transition:filter .45s, transform .7s cubic-bezier(.2,.8,.3,1); }
+.c-mur-catalogue[data-pret] .mc-piece:hover img,
+.c-mur-catalogue[data-pret] .mc-piece:focus-visible img{ filter:none; transform:scale(1.05); }
+.c-mur-catalogue .mc-piece:focus-visible{ outline:2px solid var(--mc-ink); outline-offset:2px; }
+
+/* ⚠️ Un dégradé « transparent → nuit » laisse le NOM dans sa partie transparente :
+   relevé à 1,2:1 sur la photo, dans tous les styles. L'étiquette est donc une
+   plaque PLEINE, et le dégradé ne sert qu'à l'adoucir juste au-dessus. */
+.c-mur-catalogue .mc-etq{ position:absolute; inset:auto 0 0 0; padding:10px 12px 11px;
+  background:var(--mc-voile); color:var(--mc-ink); }
+.c-mur-catalogue .mc-etq::before{ content:""; position:absolute; left:0; right:0;
+  bottom:100%; height:30px; background:linear-gradient(180deg,transparent,var(--mc-voile)); }
+.c-mur-catalogue .mc-etq b{ display:block; font-family:var(--police-titre);
+  font-size:15px; font-weight:400; }
+/* le prix ne prend PAS --accent-2 : ce rôle est décoratif et vaut #0d0d0b dans
+   « studio », #0847ab dans « mesure » — illisible sur une plaque de nuit. */
+.c-mur-catalogue .mc-etq span{ font-size:15px; font-weight:700; color:var(--mc-ink); }
+/* au repos, l'étiquette est toujours là ; en marche, elle se révèle */
+.c-mur-catalogue[data-pret] .mc-etq{ opacity:0; transform:translateY(8px);
+  transition:opacity .3s, transform .3s; }
+.c-mur-catalogue[data-pret] .mc-piece:hover .mc-etq,
+.c-mur-catalogue[data-pret] .mc-piece:focus-visible .mc-etq{ opacity:1; transform:none; }
+
+.c-mur-catalogue .mc-pied{ position:relative; z-index:3; text-align:center;
+  margin-top:clamp(22px,3vw,40px); }
+.c-mur-catalogue .mc-compte{ display:block; font-family:var(--police-titre);
+  font-size:clamp(40px,8vw,92px); line-height:1; color:var(--mc-ink); }
+.c-mur-catalogue .mc-compte + span{ font-family:var(--police-repere); font-size:13px;
+  letter-spacing:.24em; text-transform:uppercase;
+  color:color-mix(in srgb,var(--mc-ink) 74%,var(--nuit)); }
+
+/* la commande : arrêter le mur. Révélée par le script, parce qu'elle n'a de sens
+   que s'il y a du mouvement à arrêter. */
+.c-mur-catalogue .mc-commande{ position:relative; z-index:4; display:flex;
+  justify-content:center; margin-top:clamp(18px,2.6vw,32px); }
+.c-mur-catalogue .mc-commande button{ min-height:44px; padding:10px 20px; cursor:pointer;
+  font:inherit; font-size:14px; border-radius:2px;
+  border:1px solid color-mix(in srgb,var(--mc-ink) 42%,transparent);
+  background:transparent; color:var(--mc-ink); }
+.c-mur-catalogue .mc-commande button:hover{ background:var(--mc-ink); color:var(--nuit); }
+.c-mur-catalogue .mc-commande button:focus-visible{ outline:2px solid var(--mc-ink); outline-offset:3px; }
+.c-mur-catalogue[data-arret] .mc-col{ animation-play-state:paused; }
+.c-mur-catalogue[data-arret] .mc-scene{ transform:none; }
+
+/* Sans survol (tactile), l'étiquette ne se révélerait jamais : le nom et le prix
+   n'existeraient que pour la souris. */
+@media (hover:none){
+  .c-mur-catalogue[data-pret] .mc-etq{ opacity:1; transform:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  /* le script ne monte pas le mur : la grille au repos EST l'état final */
+  .c-mur-catalogue .mc-piece img{ transition:none; filter:none; }
+}
+
+/* 06/10 : display:flex l'emportait sur [hidden] — le bouton restait visible sans script et en mouvement réduit. */
+.c-mur-catalogue .mc-commande[hidden]{ display:none; }

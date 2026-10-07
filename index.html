@@ -1,52 +1,645 @@
-<!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
-<title>Meubles Nétange — deux pistes de site · démonstration Everywhere</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Jost:wght@400;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Jost',sans-serif;min-height:100vh;background:#26221b;color:#f3ecdf;display:flex;align-items:center;justify-content:center;padding:26px}
-.hub{max-width:880px;width:100%;text-align:center}
-.sur{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#c8a86a;font-weight:600;margin-bottom:14px}
-h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,5vw,48px);line-height:1.04}
-h1 em{font-style:italic;color:#c8a86a}
-.sous{margin:14px auto 34px;color:#d6cbb6;max-width:56ch;font-size:15.5px}
-.portes{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-a.porte{display:block;text-decoration:none;color:inherit;background:rgba(243,236,223,.06);border:1.5px solid rgba(201,168,106,.25);border-radius:16px;padding:32px 28px;text-align:left;transition:.2s}
-a.porte:hover{background:rgba(243,236,223,.11);border-color:#c8a86a;transform:translateY(-3px)}
-.porte .l{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#c8a86a}
-.porte h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin:8px 0 10px}
-.porte p{font-size:14px;color:#d6cbb6;line-height:1.55}
-.porte .go{display:inline-block;margin-top:16px;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#c8a86a}
-.offre-porte{display:block;margin-top:16px;text-decoration:none;color:inherit;background:rgba(201,168,106,.08);border:1.5px solid rgba(201,168,106,.35);border-radius:16px;padding:22px 28px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:.2s}
-.offre-porte:hover{background:rgba(201,168,106,.14);border-color:#c8a86a}
-.offre-porte .l{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#c8a86a}
-.offre-porte h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px;margin:6px 0 4px}
-.offre-porte p{font-size:13.5px;color:#d6cbb6}
-.offre-porte .go{flex-shrink:0;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#c8a86a}
-.pied{margin-top:34px;font-size:12px;color:#8a7e68}
-@media(max-width:680px){.portes{grid-template-columns:1fr}.offre-porte{flex-direction:column;align-items:flex-start}}
-</style></head><body>
-<div class="hub">
-  <div class="sur">Meubles Nétange · Depuis 1860 — démonstration</div>
-  <h1>Une maison depuis 1860.<br><em>Enfin racontée.</em></h1>
-  <p class="sous">Votre site préparé à partir de votre histoire, de vos collections et de vos avis —
-  raconté par ce qui vous distingue : six générations, deux magasins face à face, le Val de Sambre.</p>
-  <div class="portes">
-    <a class="porte" href="heritage/">
-      <span class="l">Piste 1 · La Lignée</span><h2>La maison racontée</h2>
-      <p>« La lignée » — la frise des six générations, de 1860 à aujourd'hui : le conseil, la literie,
-      la relaxation, le sur-mesure, et la prise de rendez-vous au showroom.</p>
-      <span class="go">Voir cette piste →</span>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Meubles Nétange · Salons, relaxation, literie et séjours à Ferrière-la-Grande</title>
+<meta name="description" content="Meubles Nétange, deux magasins face à face rue du Général de Gaulle à Ferrière-la-Grande, près de Maubeuge : salons et relaxation, canapés et angles sur mesure en cuir ou en tissu, literie, séjours et chambres.">
+<meta name="theme-color" content="#141a27">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/couches/polices/polices.css">
+<link rel="stylesheet" href="assets/couches/signature-everywhere/couche.css?v=302e0957">
+<link rel="stylesheet" href="assets/couches/mur-catalogue/couche.css?v=2b95faa6">
+<link rel="stylesheet" href="assets/netange.css?v=6ddb106e">
+<script src="assets/couches/signature-everywhere/couche.js?v=e9b15fac" defer></script>
+<script src="assets/couches/mur-catalogue/couche.js?v=71513969" defer></script>
+<script src="assets/netange.js?v=5bc8360d" defer></script>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<aside class="c-signature-everywhere" aria-label="Réalisation du site">
+  <div class="se-in">
+    <a class="se-marque" href="https://every-where.fr/?depuis=meubles-netange">
+      <span class="se-par"><span class="se-par-long">Site </span>créé par</span>
+      <span class="se-pastille" aria-hidden="true"><span class="se-logo"><video class="se-v" muted playsinline preload="none" poster="assets/couches/signature-everywhere/media/everywhere-fin.jpg" data-src="assets/couches/signature-everywhere/media/everywhere.mp4"></video></span><span class="se-point"></span></span>
+      <span class="se-sr">Everywhere (ouvre le site every-where.fr)</span>
     </a>
-    <a class="porte" href="contemporain/">
-      <span class="l">Piste 2 · Contemporain</span><h2>Le showroom épuré</h2>
-      <p>« Le meuble qui vous ressemble » — vos collections mises en scène, la maison en chiffres,
-      les avis, et la prise de rendez-vous au showroom.</p>
-      <span class="go">Voir cette piste →</span>
-    </a>
+    <a class="se-acces" href="https://every-where.fr/?depuis=meubles-netange#contact">Créer le vôtre <span aria-hidden="true">→</span></a>
   </div>
-  <p class="pied">Démonstration Everywhere — non indexée, formulaires inertes, aucune donnée collectée.
-  Visuels = vos collections ; photos des magasins et de l'équipe à ajouter. Tout se valide ensemble.</p>
-</div>
-</body></html>
+</aside>
+
+<header class="entete">
+  <a class="marque" href="#haut">
+    <span class="marque-nom">Nétange</span>
+    <span class="marque-sous">Meubles · depuis 1860</span><span class="sr">, retour en haut</span>
+  </a>
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="#univers">Collections</a></li>
+      <li><a href="#sur-mesure">Sur mesure</a></li>
+      <li><a href="#magasins">Les magasins</a></li>
+      <li><a class="nav-rdv" href="#rendez-vous">Rendez-vous</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenu">
+
+<!-- 1. La vitrine : nos intérieurs en fondu lent ; tout le texte reste lisible sans script -->
+<section class="vitrine" id="haut" aria-labelledby="titre-vitrine">
+  <div class="vitrine-photos" aria-hidden="true">
+    <img class="actif" src="media/grand/salons-172.webp" alt="" width="1280" height="853" fetchpriority="high">
+    <img src="media/grand/salons-166.webp" alt="" width="1280" height="853" loading="lazy">
+    <img src="media/grand/sejours-112.webp" alt="" width="1280" height="853" loading="lazy">
+    <img src="media/grand/salons-185.webp" alt="" width="1280" height="853" loading="lazy">
+    <img src="media/grand/chambres-031.webp" alt="" width="1280" height="853" loading="lazy">
+  </div>
+  <div class="vitrine-voile" aria-hidden="true"></div>
+  <div class="vitrine-texte">
+    <p class="surtitre">Ferrière-la-Grande · depuis 1860</p>
+    <h1 id="titre-vitrine"><span>Deux magasins de meubles,</span> <span>face à face.</span></h1>
+    <p class="chapo">Salons et relaxation, canapés et angles sur mesure en cuir ou en tissu, literie, séjours et chambres, rue du Général de Gaulle.</p>
+    <p class="actions">
+      <a class="bouton bouton-plein" href="#sur-mesure">Dessiner mon canapé</a>
+      <a class="bouton bouton-trait" href="#rendez-vous">Prendre rendez-vous</a>
+    </p>
+  </div>
+  <div class="vitrine-bas">
+    <p class="vitrine-legende" aria-live="off"><span class="vl-n">01</span> <span class="vl-t">Salons et relaxation</span></p>
+    <button class="vitrine-pause" type="button" hidden>Arrêter le défilé des photos</button>
+  </div>
+</section>
+
+<!-- 2. Les univers : une composition en quinconce, pas une grille de cartes -->
+<section class="univers" id="univers" aria-labelledby="titre-univers">
+  <header class="tete">
+    <p class="surtitre">Nos collections</p>
+    <h2 id="titre-univers">Ce que nous vendons, <span>rayon par rayon.</span></h2>
+  </header>
+  <ol class="univers-liste">
+    <li class="u u-grand">
+      <img src="media/grand/salons-185.webp" alt="Un salon d'angle en cuir clair avec méridienne, dans un séjour lumineux." width="1280" height="853" loading="lazy">
+      <div class="u-texte">
+        <span class="u-n">01</span>
+        <h3>Salons et relaxation</h3>
+        <p>Canapés, angles et fauteuils, fixes ou relax électriques, en cuir ou en tissu. Les angles se font sur mesure.</p>
+      </div>
+    </li>
+    <li class="u">
+      <img src="media/grand/chambres-029.webp" alt="Une chambre en bois clair et noir : grand lit, chevets et armoire." width="1280" height="853" loading="lazy">
+      <div class="u-texte">
+        <span class="u-n">02</span>
+        <h3>Literie et chambres</h3>
+        <p>Matelas et sommiers Epeda et Dunlopillo, sommiers relevables, lits coffres, chambres complètes.</p>
+      </div>
+    </li>
+    <li class="u">
+      <img src="media/grand/sejours-112.webp" alt="Une salle à manger en bois : vaisselier, table et ses chaises." width="1280" height="853" loading="lazy">
+      <div class="u-texte">
+        <span class="u-n">03</span>
+        <h3>Séjours et salles à manger</h3>
+        <p>Tables, chaises, buffets et vaisseliers, du chêne au style industriel.</p>
+      </div>
+    </li>
+    <li class="u">
+      <img src="media/grand/rangements-057.webp" alt="Un dressing d'angle ouvert, penderies et étagères." width="1280" height="853" loading="lazy">
+      <div class="u-texte">
+        <span class="u-n">04</span>
+        <h3>Rangements et bureaux</h3>
+        <p>Dressings, armoires, bibliothèques et bureaux.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- 3. Le mur : le volume réel, compté -->
+<section class="c-mur-catalogue" id="mur" aria-labelledby="mc-titre">
+  <div class="mc-tete">
+    <h2 id="mc-titre">Les collections en photos.</h2>
+    <p>Ce sont les photos de nos fournisseurs, telles qu’ils les diffusent.</p>
+  </div>
+  <p class="mc-commande" hidden><button type="button">Arrêter le mur</button></p>
+  <div class="mc-scene">
+    <div class="mc-col mc-source">
+      <div class="mc-piece">
+        <img src="media/mur/chambres-053.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-193.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-187.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-166.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-195.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-157.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-170.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-191.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-121.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-149.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-015.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-179.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-111.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-163.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-106.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-214.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-118.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/rangements-058.webp" alt="Photo d’ambiance d’un rangement ou d’un bureau, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Rangement</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-146.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-009.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-008.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-134.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-155.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-050.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-178.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/rangements-017.webp" alt="Photo d’ambiance d’un rangement ou d’un bureau, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Rangement</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-006.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-029.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-183.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-169.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-138.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-165.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-139.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-171.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-030.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-156.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-162.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-122.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-159.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-005.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-130.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-181.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-164.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-174.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-148.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-186.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-172.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-192.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-147.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-031.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-185.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-168.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/rangements-018.webp" alt="Photo d’ambiance d’un rangement ou d’un bureau, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Rangement</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-117.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-052.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-110.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-189.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-161.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-153.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-158.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-173.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-129.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-125.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-160.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/chambres-054.webp" alt="Photo d’ambiance d’une chambre, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Chambre</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-112.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-175.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-109.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/rangements-057.webp" alt="Photo d’ambiance d’un rangement ou d’un bureau, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Rangement</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-010.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-105.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-190.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-167.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/sejours-126.webp" alt="Photo d’ambiance d’une salle à manger, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Séjour</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-176.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-188.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+      <div class="mc-piece">
+        <img src="media/mur/salons-196.webp" alt="Photo d’ambiance d’un salon, visuel fournisseur." width="480" height="360" loading="lazy" decoding="async">
+        <span class="mc-etq"><b>Salon</b></span>
+      </div>
+    </div>
+  </div>
+  <p class="mc-pied"><span class="mc-compte">77</span> <span>photos de collection. Demandez-nous quels modèles sont exposés en magasin.</span></p>
+</section>
+
+<!-- 4. Le cœur : dessiner son canapé à ses cotes, puis demander le devis -->
+<section class="sur-mesure" id="sur-mesure" aria-labelledby="titre-mesure">
+  <header class="tete">
+    <p class="surtitre">Sur mesure</p>
+    <h2 id="titre-mesure">Dessinez votre canapé <span>à la taille de votre pièce.</span></h2>
+    <p class="tete-chapo">Une partie de nos canapés et de nos angles se fait sur mesure, de 20 en 20 cm, en cuir ou en tissu. Posez vos cotes : le plan se dessine, et nous vous répondons avec le prix.</p>
+  </header>
+
+  <div class="sm-corps">
+    <form class="sm-form" novalidate aria-describedby="sm-note">
+      <fieldset>
+        <legend>La forme</legend>
+        <div class="puces">
+          <label><input type="radio" name="forme" value="droit"><span>Droit</span></label>
+          <label><input type="radio" name="forme" value="angle-gauche" checked><span>Angle à gauche</span></label>
+          <label><input type="radio" name="forme" value="angle-droite"><span>Angle à droite</span></label>
+          <label><input type="radio" name="forme" value="u"><span>En U</span></label>
+        </div>
+      </fieldset>
+
+      <div class="cotes">
+        <label class="cote" data-cote="facade"><span class="cote-nom">Façade, hors tout</span>
+          <input type="range" id="r-facade" name="facade" min="160" max="360" step="20" value="260" aria-describedby="v-facade">
+          <output id="v-facade" for="r-facade">260 cm</output></label>
+        <label class="cote" data-cote="retour"><span class="cote-nom">Retour d’angle</span>
+          <input type="range" id="r-retour" name="retour" min="140" max="300" step="20" value="200" aria-describedby="v-retour">
+          <output id="v-retour" for="r-retour">200 cm</output></label>
+        <label class="cote" data-cote="profondeur"><span class="cote-nom">Profondeur, dossier compris</span>
+          <input type="range" id="r-profondeur" name="profondeur" min="80" max="120" step="20" value="100" aria-describedby="v-profondeur">
+          <output id="v-profondeur" for="r-profondeur">100 cm</output></label>
+      </div>
+
+      <fieldset>
+        <legend>Places relax électriques</legend>
+        <div class="puces">
+          <label><input type="radio" name="relax" value="0"><span>Aucune</span></label>
+          <label><input type="radio" name="relax" value="1" checked><span>Une</span></label>
+          <label><input type="radio" name="relax" value="2"><span>Deux</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Le revêtement</legend>
+        <div class="puces">
+          <label><input type="radio" name="matiere" value="cuir" checked><span>Cuir</span></label>
+          <label><input type="radio" name="matiere" value="tissu"><span>Tissu</span></label>
+        </div>
+        <div class="teintes" role="radiogroup" aria-label="Teinte souhaitée, selon disponibilité">
+          <label class="teinte t-cognac"><input type="radio" name="teinte" value="cognac" checked><span>Cognac</span></label>
+          <label class="teinte t-ebene"><input type="radio" name="teinte" value="ébène"><span>Ébène</span></label>
+          <label class="teinte t-perle"><input type="radio" name="teinte" value="gris perle"><span>Gris perle</span></label>
+          <label class="teinte t-sable"><input type="radio" name="teinte" value="sable"><span>Sable</span></label>
+          <label class="teinte t-nuit"><input type="radio" name="teinte" value="bleu nuit"><span>Bleu nuit</span></label>
+          <label class="teinte t-sauge"><input type="radio" name="teinte" value="vert sauge"><span>Vert sauge</span></label>
+        </div>
+      </fieldset>
+
+      <label class="champ champ-mur"><span>Longueur de votre mur <small>(facultatif, en cm)</small></span>
+        <span class="champ-unite"><input type="number" name="mur" inputmode="numeric" min="100" max="1000" step="10" placeholder="ex. 320" aria-describedby="sm-mur-etat"><span aria-hidden="true">cm</span></span>
+        <span class="champ-etat" id="sm-mur-etat" role="status"></span>
+      </label>
+    </form>
+
+    <figure class="sm-plan">
+      <svg class="plan" viewBox="0 0 600 460" role="img" aria-labelledby="plan-titre plan-desc">
+        <title id="plan-titre">Plan vu de dessus</title>
+        <desc id="plan-desc">Angle à gauche, façade 260 cm, retour 200 cm, profondeur 100 cm, une place relax.</desc>
+        <g class="plan-quadrillage"></g>
+        <g class="plan-mur"></g>
+        <g class="plan-canape"></g>
+        <g class="plan-cotes"></g>
+      </svg>
+      <figcaption class="plan-legende">Plan indicatif, vu de dessus, à l’échelle. Nous vérifions les cotes avec vous avant toute commande.</figcaption>
+    </figure>
+
+    <aside class="sm-fiche" aria-labelledby="fiche-titre">
+      <h3 class="fiche-titre" id="fiche-titre">Votre demande de devis</h3>
+      <dl class="fiche-lignes">
+        <div><dt>Forme</dt><dd data-fiche="forme">angle à gauche</dd></div>
+        <div><dt>Cotes</dt><dd data-fiche="cotes">260 × 200 cm, profondeur 100 cm</dd></div>
+        <div><dt>Relax</dt><dd data-fiche="relax">une place électrique</dd></div>
+        <div><dt>Revêtement</dt><dd data-fiche="matiere">cuir, cognac</dd></div>
+      </dl>
+      <p class="fiche-prix">Le prix dépend du modèle et du cuir ou du tissu choisi : nous vous le donnons avec le devis. Formes, teintes et relax selon les modèles.</p>
+      <p class="fiche-actions">
+        <a class="bouton bouton-plein" data-devis="mail" href="mailto:meubles-netange@aliceadsl.fr?subject=Demande%20de%20devis%20%E2%80%94%20canap%C3%A9%20sur%20mesure">Envoyer ma demande</a>
+        <a class="bouton bouton-trait" href="tel:+33327646993">Appeler le magasin</a>
+      </p>
+      <p class="fiche-note" id="sm-note">La demande part de votre messagerie : ce site n’enregistre rien.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- 5. Les deux magasins : la vraie vitrine, et la rue entre les deux numéros -->
+<section class="magasins" id="magasins" aria-labelledby="titre-magasins">
+  <figure class="magasins-photo">
+    <img src="media/grand/vitrine-magasin.webp" alt="La façade du magasin Meubles Nétange et la camionnette de livraison jaune à son nom." width="1280" height="960" loading="lazy">
+  </figure>
+  <div class="magasins-texte">
+    <p class="surtitre">Les magasins</p>
+    <h2 id="titre-magasins">Au 8 et au 15-17, <span>de part et d’autre de la rue.</span></h2>
+    <div class="rue" aria-hidden="true">
+      <span class="rue-n">8</span>
+      <span class="rue-chaussee"><span>rue du Général de Gaulle</span></span>
+      <span class="rue-n">15-17</span>
+    </div>
+    <ul class="faits">
+      <li><b>Parking privé gratuit</b> devant le magasin.</li>
+      <li><b>Livraison</b> par notre camionnette, chez vous.</li>
+      <li><b>À 3 km de Maubeuge</b>, au centre de Ferrière-la-Grande.</li>
+    </ul>
+    <p class="adresse">8 et 15-17 rue du Général de Gaulle, 59680 Ferrière-la-Grande<br><a class="lien" href="tel:+33327646993">03 27 64 69 93</a></p>
+    <p class="horaires">Du mardi au samedi, de 9 h 30 à 12 h et de 14 h 30 à 18 h (le samedi jusqu’à 17 h). Fermé le dimanche et le lundi. <span class="a-completer">[horaires repris de l’ancien site, à reconfirmer]</span></p>
+  </div>
+</section>
+
+<!-- 6. La maison et le conseil -->
+<section class="maison" id="maison" aria-labelledby="titre-maison">
+  <div class="maison-date" aria-hidden="true">1860</div>
+  <div class="maison-texte">
+    <p class="surtitre">La maison</p>
+    <h2 id="titre-maison">Six générations <span>dans le meuble.</span></h2>
+    <p>Nétange est une maison familiale de Ferrière-la-Grande, autrefois fabricant de meubles. On y vient aujourd’hui essayer un salon ou une literie, et en parler avec la famille avant de choisir.</p>
+    <blockquote class="citation">
+      <p>« Belle qualité, prix raisonnable ! Merci à M. Nétange pour ses bons conseils. »</p>
+      <footer>Extrait d’un avis Google</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 7. Le rendez-vous : le bon se remplit, le message part de votre messagerie -->
+<section class="rdv" id="rendez-vous" aria-labelledby="titre-rdv">
+  <header class="tete">
+    <p class="surtitre">Rendez-vous</p>
+    <h2 id="titre-rdv">Un relax, un matelas, <span>cela s’essaie.</span></h2>
+    <p class="tete-chapo">Dites-nous quel jour vous passez et ce que vous cherchez. Nous vous montrerons ce qui est exposé dans les deux magasins.</p>
+  </header>
+  <div class="rdv-corps">
+    <form class="rdv-form" novalidate>
+      <fieldset>
+        <legend>Ce que vous cherchez</legend>
+        <div class="puces">
+          <label><input type="radio" name="sujet" value="un salon ou un fauteuil relax" checked><span>Salon, relax</span></label>
+          <label><input type="radio" name="sujet" value="une literie"><span>Literie</span></label>
+          <label><input type="radio" name="sujet" value="un séjour ou une salle à manger"><span>Séjour</span></label>
+          <label><input type="radio" name="sujet" value="une chambre ou un rangement"><span>Chambre, rangement</span></label>
+          <label><input type="radio" name="sujet" value="un canapé sur mesure"><span>Sur mesure</span></label>
+        </div>
+      </fieldset>
+      <div class="champs">
+        <label class="champ"><span>Jour souhaité</span><input type="date" name="jour" aria-describedby="jour-erreur"><span class="champ-etat" id="jour-erreur" role="status"></span></label>
+        <label class="champ"><span>Moment</span>
+          <select name="moment"><option value="">Peu importe</option><option>le matin</option><option>l’après-midi</option></select></label>
+        <label class="champ"><span>Votre prénom</span><input type="text" name="prenom" autocomplete="given-name" maxlength="40"></label>
+        <label class="champ"><span>Votre téléphone <small>(pour vous rappeler)</small></span><input type="tel" name="tel" autocomplete="tel" maxlength="20"></label>
+      </div>
+    </form>
+    <div class="bon">
+      <h3 class="bon-titre">Bon de visite</h3>
+      <dl class="bon-lignes">
+        <div><dt>Pour</dt><dd data-bon="sujet">un salon ou un fauteuil relax</dd></div>
+        <div><dt>Le</dt><dd data-bon="jour">à convenir</dd></div>
+        <div><dt>Moment</dt><dd data-bon="moment">peu importe</dd></div>
+        <div><dt>Au nom de</dt><dd data-bon="prenom">…</dd></div>
+      </dl>
+      <p class="bon-actions">
+        <a class="bouton bouton-plein" data-envoi="mail" href="mailto:meubles-netange@aliceadsl.fr?subject=Rendez-vous%20au%20magasin">Envoyer par e-mail</a>
+        <a class="bouton bouton-trait" href="tel:+33327646993">Appeler le 03 27 64 69 93</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Ce que disent les clients : extraits réels, sans note fabriquée -->
+<section class="avis" aria-labelledby="titre-avis">
+  <h2 id="titre-avis" class="sr">Ce que disent nos clients</h2>
+  <ul class="avis-liste">
+    <li><p>« Literie de très bonne qualité, excellente livraison, sérieux. »</p></li>
+    <li><p>« Très satisfait de notre salon et literie et leurs livraisons, livreur soigneux, on reviendra. »</p></li>
+  </ul>
+  <p class="avis-source">Extraits d’avis Google, recopiés tels quels.</p>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="pied-haut">
+    <div>
+      <p class="pied-nom">Nétange</p>
+      <p>Meubles depuis 1860</p>
+    </div>
+    <div>
+      <p class="surtitre">Les magasins</p>
+      <p>8 et 15-17 rue du Général de Gaulle<br>59680 Ferrière-la-Grande</p>
+    </div>
+    <div>
+      <p class="surtitre">Nous joindre</p>
+      <p><a class="lien" href="tel:+33327646993">03 27 64 69 93</a><br><a class="lien" href="mailto:meubles-netange@aliceadsl.fr">meubles-netange@aliceadsl.fr</a></p>
+    </div>
+    <div>
+      <p class="surtitre">Le site</p>
+      <p><a class="lien" href="mentions-legales.html">Mentions légales</a><br>Photos des collections : visuels de nos fournisseurs. Photo de la façade : la nôtre.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
